@@ -1,0 +1,5 @@
+# GitHub Linguist Overrides
+*.html linguist-vendored
+*.html linguist-detectable=false
+android/build/** linguist-vendored
+functions/** linguist-documentation

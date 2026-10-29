@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "200583435164",
+    "project_id": "hisab-bea4d",
+    "storage_bucket": "hisab-bea4d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200583435164:android:a984929d98944553c2ee59",
+        "android_client_info": {
+          "package_name": "com.example.hisab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC40zdjPBo9P0ZDkHN836SF-cHAGYpVM88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

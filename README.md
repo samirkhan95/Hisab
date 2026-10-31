@@ -2,30 +2,25 @@
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
-[![Android](https://img.shields.io/badge/Android-Native-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com)
-[![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20Riverpod-4285F4?style=for-the-badge)](https://riverpod.dev)
-[![License](https://img.shields.io/badge/License-Showcase%20%26%20Portfolio-FF6F00?style=for-the-badge)](#-license)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=for-the-badge)](#)
-
----
-
-## 🚀 Quick Download
-
-Experience **Hisab** directly on your Android device:
-
-| File | Link |
-| :--- | :--- |
-| **Release APK (v1.0.0)** | [📥 **Download Latest Release APK**](https://github.com/samirkhan95/hisab/releases/latest) |
-
-*Note: The pre-compiled production release APK (`hisab.apk`) is also available in the repository root folder.*
-
----
-
-## 📱 App Overview
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20Cross--Platform-green?style=for-the-badge&logo=android)](https://android.com)
+[![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20Riverpod-orange?style=for-the-badge)](https://riverpod.dev)
+[![Status](https://img.shields.io/badge/Build-Release%20Ready-brightgreen?style=for-the-badge)]()
 
 **Hisab** is a production-grade, real-time shared expense tracking and peer-to-peer debt ledger application built with **Flutter**, **Riverpod**, and **Firebase**. Designed for individuals, roomies, and friend groups, Hisab streamlines expense splits, balance calculation, and financial settlements with a sleek, modern UI and tactile UX animations.
 
-### 🌟 Key Features
+---
+
+## 📱 Try the Live App (Release APK)
+
+You can experience the fully compiled app directly on your Android device without building from source:
+
+📥 **[Download Latest Release APK](https://github.com/samirkhan95/Hisab/releases/latest)**
+
+> **Note for Reviewers & Recruiters:** This showcase repository highlights the architecture, design system, and core technical implementations of Hisab. The production-ready pre-built APK is provided above for full hands-on testing.
+
+---
+
+## ✨ Key Features
 
 - 📊 **Real-Time Net Balance Ledger**: Dynamic real-time calculation of who owes what across all active transactions.
 - ⚡ **Tactile "Hold-to-Confirm" Settlements**: Interactive, hold-to-activate button with custom progress animations and haptic feedback to prevent accidental financial settlements.
@@ -37,11 +32,25 @@ Experience **Hisab** directly on your Android device:
 
 ---
 
-## 🏛️ Architecture & Project Structure
+## 📸 App Screenshots
 
-The project follows **Clean Architecture** principles structured by feature modules, emphasizing separation of concerns and reactivity via **Flutter Riverpod**.
+| Dashboard & Balance | Expense Split Sheet | Tactile Settlement | Profile & Archive |
+| :---: | :---: | :---: | :---: |
+| *(Add Screenshot)* | *(Add Screenshot)* | *(Add Screenshot)* | *(Add Screenshot)* |
 
-```text
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Framework:** [Flutter](https://flutter.dev/) (Dart 3.x)
+- **State Management:** [`flutter_riverpod`](https://pub.dev/packages/flutter_riverpod)
+- **Navigation:** [`go_router`](https://pub.dev/packages/go_router)
+- **Backend & Database:** Firebase Auth, Cloud Firestore, Firebase Storage
+- **Push Notifications:** Firebase Cloud Messaging (FCM) & `flutter_local_notifications`
+- **Styling:** Custom Material Theme, `google_fonts`, Custom Glassmorphism & Haptics
+- **Architecture Pattern:** Clean Layered Architecture (MVVM + Riverpod)
+
+```
 lib/
 ├── main.dart                       # App entrypoint & Firebase initialization
 ├── core/                           # Shared core components & infrastructure
@@ -67,10 +76,9 @@ lib/
 
 ---
 
-## 💡 Code Highlights
+## 💡 Showcase Code Snippets
 
 ### 1. Reactive Balance Calculation (`Riverpod Stream & Derived State`)
-
 ```dart
 final balanceProvider = Provider<double>((ref) {
   final expenses = ref.watch(expensesProvider).value ?? [];
@@ -92,8 +100,7 @@ final balanceProvider = Provider<double>((ref) {
 });
 ```
 
-### 2. Tactile Hold-to-Confirm Action (`Custom Animation & Haptic Feedback`)
-
+### 2. Tactile Hold-to-Confirm Settlement Action
 ```dart
 void _onHoldComplete() {
   HapticFeedback.heavyImpact();
@@ -105,50 +112,40 @@ void _onHoldComplete() {
 
 ---
 
-## 🛠️ Tech Stack & Dependencies
+## 🚀 How to Build Release APK
 
-- **Framework**: [Flutter](https://flutter.dev) (Dart 3.x)
-- **State Management**: [Flutter Riverpod](https://riverpod.dev)
-- **Navigation**: [GoRouter](https://pub.dev/packages/go_router)
-- **Backend & Database**: Firebase Auth, Cloud Firestore, Firebase Storage
-- **Push Notifications**: Firebase Cloud Messaging (FCM) & Flutter Local Notifications
-- **Styling**: Google Fonts & Custom Material Theme
+To generate the release build for testing on Android:
 
----
+```bash
+# 1. Clean build artifacts
+flutter clean
 
-## 🛠️ Setup & Local Development
+# 2. Get dependencies
+flutter pub get
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/samirkhan95/hisab.git
-   cd hisab
-   ```
+# 3. Build optimized Release APK
+flutter build apk --release
+```
 
-2. **Install Dependencies**:
-   ```bash
-   flutter pub get
-   ```
-
-3. **Run the Application**:
-   ```bash
-   flutter run
-   ```
-
-4. **Build Release APK**:
-   ```bash
-   flutter build apk --release
-   ```
+The output binary will be located at:
+`build/app/outputs/flutter-apk/app-release.apk`
 
 ---
 
-## 👤 Author & Developer
+## 💼 Showcase Repository Notice
 
-**Samir Khan**
+This repository serves as a **Portfolio & Architecture Showcase** for project evaluation. 
+
+- Core UI widgets, data models, state providers, and design tokens are included to showcase code quality and engineering standards.
+- Pre-built binary releases are available under the [Releases](https://github.com/samirkhan95/Hisab/releases) tab.
+
+---
+
+## 👤 Author
+
+Developed by **Samir Khan**  
 - GitHub: [@samirkhan95](https://github.com/samirkhan95)
-- Focus: Mobile App Architecture, Flutter, Cloud Engineering & UI/UX Systems
 
 ---
 
-## 📜 License
-
-This project is licensed under the **Portfolio & Showcase License**. See the [LICENSE](LICENSE) file for details.
+*Made with ❤️ using Flutter.*
